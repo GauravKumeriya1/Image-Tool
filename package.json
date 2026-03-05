@@ -1,0 +1,22 @@
+{
+  "name": "subtitle-ai",
+  "version": "1.0.0",
+  "description": "A full-stack SaaS platform for converting audio/video to subtitles using Whisper AI",
+  "author": "Your Name",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\"",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:backend": "npm run dev --prefix backend",
+    "build": "npm run build --prefix frontend && npm run build --prefix backend",
+    "build:frontend": "npm run build --prefix frontend",
+    "build:backend": "npm run build --prefix backend",
+    "start": "node backend/dist/index.js",
+    "db:migrate": "npm run migrate --prefix backend",
+    "db:seed": "npm run seed --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
