@@ -4,7 +4,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'default_secret'
 const JWT_EXPIRE = process.env.JWT_EXPIRE || '7d'
 
 export const generateToken = (userId: string): string => {
-  return jwt.sign({ userId }, JWT_SECRET, { expiresIn: JWT_EXPIRE })
+  return jwt.sign({ userId }, JWT_SECRET, { expiresIn: JWT_EXPIRE } as any)
 }
 
 export const verifyToken = (token: string): any => {

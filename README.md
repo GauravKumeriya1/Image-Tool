@@ -11,7 +11,27 @@ A complete, production-ready SaaS platform for subtitle generation:
 - **Download** in multiple formats
 - **Manage** your transcripts and projects
 
-## 📚 Documentation Hub
+## � Authentication System
+
+Complete user authentication with JWT tokens:
+- **User Registration** - Create accounts with email/password
+- **User Login** - Secure authentication
+- **Protected Routes** - Dashboard access control
+- **PostgreSQL Storage** - Secure user data storage
+- **JWT Tokens** - Stateless authentication
+- **Password Security** - bcrypt hashing
+
+### Authentication Features
+- ✅ User signup and login
+- ✅ JWT token authentication
+- ✅ Protected dashboard routes
+- ✅ Automatic token management
+- ✅ Secure password hashing
+- ✅ User profile management
+
+**[AUTHENTICATION_SYSTEM.md](./AUTHENTICATION_SYSTEM.md)** - Complete authentication guide
+
+## �📚 Documentation Hub
 
 ### Start Here ⚡
 - **[QUICK_START.md](./QUICK_START.md)** - 5-minute full-stack setup
@@ -86,6 +106,14 @@ npm run dev
 6. Download subtitles!
 
 ## ✨ Features
+
+### User Authentication
+- ✅ User registration and login
+- ✅ JWT token authentication
+- ✅ Protected dashboard routes
+- ✅ Secure password hashing
+- ✅ User profile management
+- ✅ Automatic token refresh
 
 ### Upload & Transcription
 - ✅ Drag-and-drop file upload

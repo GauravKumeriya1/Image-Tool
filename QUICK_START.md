@@ -45,6 +45,10 @@ PORT=3001
 DATABASE_URL=postgresql://postgres:postgres@localhost:5432/subtitleai_db
 OPENAI_API_KEY=sk_your_key_here
 CORS_ORIGIN=http://localhost:3000
+
+# Authentication (JWT)
+JWT_SECRET=your_super_secret_jwt_key_here_change_this_in_production
+JWT_EXPIRE=7d
 ```
 
 **Get OpenAI API Key:**
@@ -73,6 +77,28 @@ npm run dev
 ```bash
 curl http://localhost:3001/api/health
 ```
+
+### 8. Test Authentication System
+```bash
+# Run authentication tests
+../test-auth.sh
+```
+
+This will test:
+- ✅ User registration
+- ✅ User login
+- ✅ Protected routes
+- ✅ Error handling
+
+### 9. Start Frontend (Optional)
+```bash
+# In another terminal
+cd ../frontend
+npm install
+npm run dev
+```
+
+Visit http://localhost:3000 to use the web interface!
 
 ## 📋 What's Been Implemented
 

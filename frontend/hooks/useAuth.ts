@@ -5,9 +5,9 @@ export const useAuth = () => {
   const login = useCallback(async (email: string, password: string) => {
     try {
       const response = await apiClient.post('/api/auth/login', { email, password })
-      const { token } = response.data
+      const { token, user } = response.data
       localStorage.setItem('token', token)
-      return response.data
+      return { token, user }
     } catch (error) {
       throw error
     }
@@ -16,17 +16,32 @@ export const useAuth = () => {
   const signup = useCallback(async (name: string, email: string, password: string) => {
     try {
       const response = await apiClient.post('/api/auth/signup', { name, email, password })
-      const { token } = response.data
+      const { token, user } = response.data
       localStorage.setItem('token', token)
-      return response.data
+      return { token, user }
     } catch (error) {
       throw error
     }
   }, [])
 
-  const logout = useCallback(() => {
-    localStorage.removeItem('token')
+  const logout = useCallback(async () => {
+    try {
+      await apiClient.post('/api/auth/logout')
+    } catch (error) {
+      console.error('Logout error:', error)
+    } finally {
+      localStorage.removeItem('token')
+    }
   }, [])
 
-  return { login, signup, logout }
+  const getProfile = useCallback(async () => {
+    try {
+      const response = await apiClient.get('/api/auth/profile')
+      return response.data.user
+    } catch (error) {
+      throw error
+    }
+  }, [])
+
+  return { login, signup, logout, getProfile }
 }

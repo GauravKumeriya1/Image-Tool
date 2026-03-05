@@ -61,7 +61,7 @@ const parseTranscriptToSegments = (
   // Otherwise, create segments from the full transcript
   // Split by sentences or chunks
   const sentences = transcript.match(/[^.!?]+[.!?]+/g) || [transcript]
-  const segments: Segment[] = []
+  const segmentList: Segment[] = []
   const wordsPerSecond = 2.5 // Average speaking speed
   let currentTime = 0
 
@@ -70,7 +70,7 @@ const parseTranscriptToSegments = (
     const wordCount = text.split(/\s+/).length
     const duration = wordCount / wordsPerSecond
 
-    segments.push({
+    segmentList.push({
       id: index + 1,
       start: currentTime,
       end: currentTime + duration,
@@ -80,7 +80,7 @@ const parseTranscriptToSegments = (
     currentTime += duration
   })
 
-  return segments
+  return segmentList
 }
 
 /**
