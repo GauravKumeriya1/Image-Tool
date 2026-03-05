@@ -188,31 +188,3 @@ export default function UploadPage() {
     </div>
   )
 }
-              </div>
-              <div>
-                <label className="flex items-center space-x-2">
-                  <input type="checkbox" className="rounded" />
-                  <span className="text-sm">VTT</span>
-                </label>
-              </div>
-              <div>
-                <label className="flex items-center space-x-2">
-                  <input type="checkbox" className="rounded" />
-                  <span className="text-sm">STL</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <button
-            type="submit"
-            disabled={!file || uploading}
-            className="w-full btn-primary py-2 font-semibold mt-6"
-          >
-            {uploading ? 'Uploading...' : 'Upload and Process'}
-          </button>
-        </form>
-      </div>
-    </div>
-  )
-}

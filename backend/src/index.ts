@@ -6,6 +6,7 @@ import uploadRoutes from './routes/upload'
 import transcribeRoutes from './routes/transcribe'
 import authRoutes from './routes/auth'
 import projectRoutes from './routes/projects'
+import adminRoutes from './routes/admin'
 
 dotenv.config()
 
@@ -46,6 +47,7 @@ app.get('/api/download/stl/:id', transcribeRoutes)
 
 app.use('/api/auth', authRoutes)
 app.use('/api/projects', projectRoutes)
+app.use('/api/admin', adminRoutes)
 
 // 404 handler
 app.use((req, res) => {

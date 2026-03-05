@@ -138,3 +138,5 @@ export default function SignupPage() {
         </div>
       </main>
     </AuthRedirect>
+  )
+}

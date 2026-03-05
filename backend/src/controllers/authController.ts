@@ -6,9 +6,6 @@ import { query } from '../config/database'
 import { CREATE_USER, GET_USER_BY_EMAIL } from '../models/queries'
 
 export const signup = async (req: Request, res: Response) => {
-  console.log('Signup function called')
-  console.log('Request body:', req.body)
-  console.log('Starting signup process...')
   try {
     const { name, email, password } = req.body
 

@@ -39,6 +39,13 @@ export default function AdminLayout({
             {sidebarOpen && <span>Users</span>}
           </a>
           <a
+            href="/admin/transcripts"
+            className="flex items-center space-x-4 px-4 py-2 rounded-lg hover:bg-gray-100"
+          >
+            <span>📝</span>
+            {sidebarOpen && <span>Transcripts</span>}
+          </a>
+          <a
             href="/admin/projects"
             className="flex items-center space-x-4 px-4 py-2 rounded-lg hover:bg-gray-100"
           >
